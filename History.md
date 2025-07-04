@@ -1,5 +1,13 @@
 # Histórico de Versões
 
+## [0.7.0] - 07-06-2025
+
+### Adicionado
+
+- Uso do `cy.session` para reutilizar sessões de login.
+- Novo comando customizado `loginWithSession`.
+- Adequação dos testes de homepage e checkout para utilizar a nova sessão.
+
 ## [0.6.1] - 07-06-2025
 
 ### Corrigido
