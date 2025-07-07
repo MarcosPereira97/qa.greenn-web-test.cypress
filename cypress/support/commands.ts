@@ -37,6 +37,7 @@ declare global {
     interface Chainable {
       doLogin(data?: LoginData): Chainable<void>;
       loginSuccessfully(data: LoginData): Chainable<void>;
+      loginWithSession(data: LoginData): Chainable<void>;
       validateLoginError(data: LoginData): Chainable<void>;
       validateSameImages(): Chainable<void>;
       addProductToCart(): Chainable<void>;

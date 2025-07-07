@@ -20,6 +20,13 @@ Cypress.Commands.add("loginSuccessfully", (data: LoginData) => {
   cy.url().should("include", "/inventory.html");
 });
 
+Cypress.Commands.add("loginWithSession", (data: LoginData) => {
+  cy.session([data.email, data.password], () => {
+    cy.visitSite({ url: "/" });
+    cy.loginSuccessfully(data);
+  });
+});
+
 Cypress.Commands.add("validateLoginError", (data: LoginData) => {
   cy.doLogin(data);
   loginPage.getErrorMessage().should("have.text", data.expectedMessage);
