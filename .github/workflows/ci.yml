@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -22,13 +22,13 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        uses: cypress-io/github-action@6
+        uses: cypress-io/github-action@v6
         with:
           browser: chrome
 
       - name: Upload Allure results
         if: always()
-        uses: actions/upload-artifact@4
+        uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: allure-results
